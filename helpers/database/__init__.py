@@ -1,7 +1,7 @@
 from flask import g
 import psycopg2
 
-import app
+from helpers.application import app
 from helpers.environment import environment
 
 
