@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS codigo_territorial(
 
 CREATE TABLE IF NOT EXISTS nome_territorio(
     id SERIAL PRIMARY KEY,
-    nome VARCHAR NOT NULL,
+    nome VARCHAR NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS classe_cabeca_galinaceos(

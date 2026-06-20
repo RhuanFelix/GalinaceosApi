@@ -4,7 +4,7 @@ from helpers.logger import logger
 
 DATABASE_NAME = environment.get("DB_NAME")
 DATABASE_USER = environment.get("DB_USER")
-DATABASE_PASS = environment.get("123456")
+DATABASE_PASS = environment.get("DB_PASSWORD")
 DATABASE_PORT = environment.get("DB_PORT")
 DATABASE_HOST = environment.get("DB_HOST")
 
