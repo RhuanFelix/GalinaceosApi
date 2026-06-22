@@ -5,7 +5,7 @@ from controllers.CodigoTerritorialController import codigo_territorial_bp
 
 @app.get("/")
 def index():
-    return "{'versão':'0.5.0'}", 200
+    return "{'versão':'0.5.1'}", 200
 
 @app.get("/health")
 def healthCheck():
