@@ -2,8 +2,6 @@ from models.Avicultura2017 import Avicultura2017
 from repositories.Avicultura2017Repository import Avicultura2017Repository
 
 def rowToAvicultura2017(row):
-    # A ordem dos campos deve corresponder à SELECT * (id + todos os outros)
-    # As colunas do banco estão em minúsculas
     (id, sist_cria, niv_terr, cod_terr, nom_terr, cl_gal,
      e_cria_gal, e_tem_gal, e_gal_vend, e_ovos_prod, e_ovos_vend,
      e_subs, e_comerc, e_recebe_ori, e_ori_gov, e_ori_propria,
@@ -36,13 +34,7 @@ class Avicultura2017Service:
         self.repository = Avicultura2017Repository()
     
     def get_by_filters(self, filters):
-        """
-        Obtém registros de avicultura 2017 aplicando filtros.
-        Retorna lista de objetos Avicultura2017.
-        """
         rows = self.repository.get_by_filters(filters)
-        
-        # Converter cada linha para objeto Avicultura2017
         aviculturas = [rowToAvicultura2017(row) for row in rows]
         return aviculturas
 

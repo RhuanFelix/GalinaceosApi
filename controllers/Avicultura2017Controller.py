@@ -4,15 +4,10 @@ from services.Avicultura2017Service import Avicultura2017Service
 galinaceos_bp = Blueprint('galinaceos', __name__, url_prefix='/galinaceos')
 service = Avicultura2017Service()
 
-@galinaceos_bp.route('', methods=['GET'])
+@galinaceos_bp.get("/")
 def get_galinaceos():
-    """
-    Endpoint GET /galinaceos
-    Aceita query parameters para filtrar: sist_cria, niv_terr, cod_terr, nom_terr, cl_gal
-    Exemplo: /galinaceos?sist_cria=1&niv_terr=2
-    """
+
     try:
-        # Obter filtros dos query parameters
         filters = {}
         
         if request.args.get('sist_cria'):
@@ -30,10 +25,8 @@ def get_galinaceos():
         if request.args.get('cl_gal'):
             filters['cl_gal'] = request.args.get('cl_gal')
         
-        # Chamar service com os filtros
         aviculturas = service.get_by_filters(filters)
         
-        # Converter para dicionários para serializar
         resultado = [av.toDict() for av in aviculturas]
         
         return jsonify({
