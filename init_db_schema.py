@@ -1,12 +1,16 @@
 import psycopg2
-from helpers.environment import environment
+from dotenv import load_dotenv
+
+from helpers.enviroment import enviroment
 from helpers.logger import logger
 
-DATABASE_NAME = "galinaceos"
-DATABASE_USER = "postgres"
-DATABASE_PASS = "123456"
-DATABASE_PORT = "5435"
-DATABASE_HOST = "localhost"
+load_dotenv()
+
+DATABASE_NAME = enviroment.get("DB_NAME")
+DATABASE_USER = enviroment.get("DB_USER")
+DATABASE_PASS = enviroment.get("DB_PASSWORD")
+DATABASE_PORT = enviroment.get("DB_PORT")
+DATABASE_HOST = enviroment.get("DB_HOST")
 
 conn = None
 try:
