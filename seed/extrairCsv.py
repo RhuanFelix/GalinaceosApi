@@ -19,7 +19,7 @@ def get_connection():
     )
 
 df = pd.read_csv(
-    'GALINACEOS.csv',
+    '../GALINACEOS.csv',
     sep=';',
     encoding='latin1',
     dtype=str,
